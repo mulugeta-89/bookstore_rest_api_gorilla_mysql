@@ -9,7 +9,7 @@ var(
 	db *gorm.DB
 )
 
-func connect() {
+func Connect() {
 	b, err := gorm.Open("mysql", "root:Mulu2835../library?charset=utf8&parseTime=True&loc=Local")
 	if err != nil {
 		panic(err)
@@ -18,6 +18,6 @@ func connect() {
 	db =  b
 }
 
-func getDb() *gorm.DB {
+func GetDb() *gorm.DB {
 	return db
 }
