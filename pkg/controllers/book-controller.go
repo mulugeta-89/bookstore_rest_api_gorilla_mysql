@@ -22,7 +22,7 @@ func GetBooks(w http.ResponseWriter, r *http.Request) {
 func DeleteBooks(w http.ResponseWriter, r *http.Request) {
 	models.DeleteBooks()
 	w.Header().Set("Content-Type", "pkglication/json")
-	w.WriteHeader(http.StatusNoContent)
+	w.WriteHeader(http.StatusOK)
 	fmt.Fprint(w, "[]")
 }
 
