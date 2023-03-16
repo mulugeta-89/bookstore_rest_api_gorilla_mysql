@@ -21,8 +21,9 @@ func GetBooks(w http.ResponseWriter, r *http.Request) {
 
 func DeleteBooks(w http.ResponseWriter, r *http.Request) {
 	models.DeleteBooks()
-	//w.Header().Set("Content-Type", "pkglication/json")
+	w.Header().Set("Content-Type", "pkglication/json")
 	w.WriteHeader(http.StatusNoContent)
+	fmt.Fprint(w, "[]")
 }
 
 func GetBookById(w http.ResponseWriter, r *http.Request) {
