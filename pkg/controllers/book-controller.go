@@ -19,6 +19,12 @@ func GetBooks(w http.ResponseWriter, r *http.Request) {
 	w.Write(res)
 }
 
+func DeleteBooks(w http.ResponseWriter, r *http.Request) {
+	models.DeleteBooks()
+	//w.Header().Set("Content-Type", "pkglication/json")
+	w.WriteHeader(http.StatusNoContent)
+}
+
 func GetBookById(w http.ResponseWriter, r *http.Request) {
 	Vars := mux.Vars(r)
 	bookId := Vars["bookId"]
